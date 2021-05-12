@@ -28,14 +28,21 @@ export const placeData: ListObjectsV2OutputCustom = {
     },
     {
       ETag: '666f1b1ef9f24ccae102ea7cb4b54d0e',
-      Key: 'outside/2020020214362248.JPG',
+      Key: 'outside/2020020214440396.JPG',
       LastModified: new Date('2021-04-29T14:02:13.000Z'),
       Size: 50464,
       StorageClass: 'STANDARD',
     },
     {
       ETag: '0017c1c57687f010f5958507a1ecfd9d',
-      Key: 'outside/2020020214440396.JPG',
+      Key: 'outside/2020020214362248.JPG',
+      LastModified: new Date('2021-02-07T15:55:09.000Z'),
+      Size: 15401,
+      StorageClass: 'STANDARD',
+    },
+    {
+      ETag: '0017c1c57687f010f5958507a1ecfd9d',
+      Key: 'outside/2020020214353094.JPG',
       LastModified: new Date('2021-02-07T15:55:09.000Z'),
       Size: 15401,
       StorageClass: 'STANDARD',

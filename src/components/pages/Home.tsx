@@ -1,54 +1,18 @@
 import { VFC } from 'react';
+import PlaceList from 'containers/organisms/PlaceList';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import { Link } from 'react-router-dom';
-import { Place } from '../../data/places';
-
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
-
-const Home: VFC<{ places: Place[] }> = ({ places }) => {
-  const classes = useStyles();
-
-  return (
-    <>
-      <h2>施工場所</h2>
-      {places.map((place) => (
-        <Link to={`gallery/${place.code}`} key={place.code}>
-          <Card className={classes.root} variant="outlined">
-            <CardContent>
-              <Typography
-                className={classes.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                {place.name}
-              </Typography>
-              <Typography variant="h5" component="h2">
-                {place.desc}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Link>
-      ))}
-    </>
-  );
-};
+const Home: VFC = () => (
+  <>
+    <h2>施工場所</h2>
+    <PlaceList />
+  </>
+);
 export default Home;
+
+/**
+ * メモ
+ * 施工場所一覧の取得方法について
+ * １ ベタ書き
+ * 2 listObjectV2で取得した結果に対して最初の"/"より前の文字列だけを取得する、各ギャラリーページでは再度listObjectV2で画像を取得
+ * 3 listObjectV2で取得した結果に対して最初の"/"より前の文字列だけを取得する、取得した一覧データはそのまま再利用
+ */
