@@ -16,16 +16,9 @@ export type ListObjectsV2OutputCustom = {
   Prefix: string;
 };
 
-export const placeData: ListObjectsV2OutputCustom = {
+export const imageData: ListObjectsV2OutputCustom = {
   CommonPrefixes: [],
   Contents: [
-    {
-      ETag: 'd41d8cd98f00b204e9800998ecf8427e',
-      Key: 'outside/',
-      LastModified: new Date('2021-04-29T14:00:10.000Z'),
-      Size: 0,
-      StorageClass: 'STANDARD',
-    },
     {
       ETag: '666f1b1ef9f24ccae102ea7cb4b54d0e',
       Key: 'outside/2020020214440396.JPG',
