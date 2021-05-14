@@ -9,6 +9,7 @@ import { placesData } from 'data/places';
 
 const PlaceGalleries: VFC = () => {
   const { placeCode } = useParams<{ placeCode: string }>();
+  const places = placesData[placeCode];
 
   const baseUrl =
     'https://s3.ap-northeast-1.amazonaws.com/numanoi-app-resized/';
@@ -23,7 +24,8 @@ const PlaceGalleries: VFC = () => {
 
   return (
     <>
-      {placesData[placeCode].details.map((place) => (
+      <h2>{places.name}</h2>
+      {places.details.map((place) => (
         <PlaceImages images={images} key={place} />
       ))}
     </>
