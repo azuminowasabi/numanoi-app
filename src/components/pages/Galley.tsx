@@ -3,7 +3,7 @@
 import { VFC } from 'react';
 import { Route, RouteComponentProps } from 'react-router';
 import HomeButton from 'containers/molecules/HomeButton';
-import PlaceGalleries from '../templates/PlaceGalleries';
+import PlaceGalleries from 'containers/templates/PlaceGalleries';
 
 const Galley: VFC<RouteComponentProps> = ({ match }) => (
   <>

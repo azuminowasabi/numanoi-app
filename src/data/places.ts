@@ -20,13 +20,19 @@
  *  西庭 (杭のある場所)
  *  第一焼却炉
  *
+ *
  */
 
 type Place = {
   id: number;
   name: string;
   desc: string;
-  details: string[];
+  details: PlaceDetail[];
+};
+
+export type PlaceDetail = {
+  code: string;
+  alias: string;
 };
 
 export type PlacesData = { [PlaceCode: string]: Place };
@@ -37,14 +43,38 @@ export const placesData: PlacesData = {
     name: '屋内',
     desc: '家の中',
     details: [
-      'entrance',
-      'kitchen',
-      'bath',
-      'restroom',
-      'dining',
-      'jproom1',
-      'jproom2',
-      'annex',
+      {
+        code: 'entrance',
+        alias: '玄関',
+      },
+      {
+        code: 'kitchen',
+        alias: 'キッチン',
+      },
+      {
+        code: 'bath',
+        alias: '風呂場',
+      },
+      {
+        code: 'restroom',
+        alias: 'トイレ',
+      },
+      {
+        code: 'dining',
+        alias: '居間',
+      },
+      {
+        code: 'jproom1',
+        alias: '和室1',
+      },
+      {
+        code: 'jproom2',
+        alias: '和室2',
+      },
+      {
+        code: 'annex',
+        alias: '離れ',
+      },
     ],
   },
   Outside: {
@@ -52,14 +82,42 @@ export const placesData: PlacesData = {
     name: '屋外',
     desc: '家の外',
     details: [
-      'steet',
-      'parking',
-      'pond',
-      'front-entrance',
-      'east-garden',
-      'south-garden',
-      'west-garden',
-      'shoukyakuro1',
+      {
+        code: 'street',
+        alias: '通り',
+      },
+      {
+        code: 'parking',
+        alias: '駐車場',
+      },
+      {
+        code: 'pond',
+        alias: '池',
+      },
+      {
+        code: 'front-entrance',
+        alias: '家の前',
+      },
+      {
+        code: 'east-garden',
+        alias: '東側庭',
+      },
+      {
+        code: 'south-garden',
+        alias: '南側庭',
+      },
+      {
+        code: 'west-garden',
+        alias: '西側庭',
+      },
+      {
+        code: 'shoukyakuro1',
+        alias: '焼却炉1',
+      },
+      {
+        code: 'shoukyakuro2',
+        alias: '焼却炉2',
+      },
     ],
   },
 };

@@ -7,12 +7,12 @@ import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 
 export type tileData = {
   img: string;
-  title: string;
-  author: string;
+  title: string | undefined;
 };
 
 type Props = {
   images: tileData[];
+  alias: string;
 };
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -39,11 +39,12 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const PlaceImages: VFC<Props> = ({ images = [] }) => {
+const PlaceImages: VFC<Props> = ({ images = [], alias }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
+      <h4>{alias}</h4>
       <GridList className={classes.gridList} cols={2.5}>
         {images.map((image) => (
           <GridListTile key={image.img}>
