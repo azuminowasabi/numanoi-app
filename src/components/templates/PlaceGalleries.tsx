@@ -1,23 +1,24 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { VFC } from 'react';
-import PlaceImages from 'containers/organisms/PlaceImages';
-import { PlaceDetail } from 'data/places';
+import PlaceImages from 'components/organisms/PlaceImages';
 
-type Props = {
-  name: string;
-  places: PlaceDetail[];
+type imagesType = {
+  alias: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  tileData: any;
 };
 
-const PlaceGalleries: VFC<Props> = ({ name, places }) => (
+type Props = {
+  images: imagesType[];
+};
+
+const PlaceGalleries: VFC<Props> = ({ images }) => (
   <>
-    <h2>{name}</h2>
-    {places.map((place) => (
+    {images.map((image) => (
       <PlaceImages
-        placeCode={place.code}
-        key={place.code}
-        alias={place.alias}
+        key={image.alias}
+        tileData={image.tileData}
+        alias={image.alias}
       />
     ))}
   </>
