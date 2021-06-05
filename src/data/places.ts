@@ -24,7 +24,6 @@
  */
 
 type Place = {
-  id: number;
   name: string;
   desc: string;
   details: PlaceDetail[];
@@ -35,11 +34,8 @@ export type PlaceDetail = {
   alias: string;
 };
 
-export type PlacesData = { [PlaceCode: string]: Place };
-
-export const placesData: PlacesData = {
-  Inside: {
-    id: 1,
+export const placesData: Place[] = [
+  {
     name: '屋内',
     desc: '家の中',
     details: [
@@ -77,8 +73,7 @@ export const placesData: PlacesData = {
       },
     ],
   },
-  Outside: {
-    id: 2,
+  {
     name: '屋外',
     desc: '家の外',
     details: [
@@ -120,4 +115,4 @@ export const placesData: PlacesData = {
       },
     ],
   },
-};
+];

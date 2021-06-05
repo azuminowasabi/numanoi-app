@@ -1,5 +1,5 @@
 import { VFC } from 'react';
-import PlaceList from 'containers/organisms/PlaceList';
+import PlaceList from 'components/organisms/PlaceList';
 
 const Home: VFC = () => (
   <>

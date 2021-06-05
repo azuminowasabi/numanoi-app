@@ -1,59 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { VFC } from 'react';
 
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
+import { placesData } from 'data/places';
+import PlaceCard from './PlaceCard';
 
-type Place = {
-  code: string;
-  name: string;
-  desc: string;
-};
-
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
-
-const PlaceList: VFC<{ places: Place[] }> = ({ places }) => {
-  const classes = useStyles();
-
-  return (
-    <>
-      {places.map((place) => (
-        <Link to={`gallery/${place.code}`} key={place.code}>
-          <Card className={classes.root} variant="outlined">
-            <CardContent>
-              <Typography
-                className={classes.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                {place.name}
-              </Typography>
-              <Typography variant="h5" component="h2">
-                {place.desc}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Link>
-      ))}
-    </>
-  );
-};
+const PlaceList: VFC = () => (
+  <>
+    {placesData.map((placeData) => (
+      <PlaceCard places={placeData.details} key={placeData.name} />
+    ))}
+  </>
+);
 
 export default PlaceList;

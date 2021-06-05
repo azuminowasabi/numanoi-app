@@ -1,20 +1,20 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { VFC } from 'react';
 import { Route, RouteComponentProps } from 'react-router';
 import HomeButton from 'containers/molecules/HomeButton';
-import PlaceGalleries from 'containers/templates/PlaceGalleries';
+import PlaceImages from 'containers/organisms/PlaceImages';
+import PlaceBeforeAfter from 'components/organisms/PlaceBeforeAfter';
 
-const Galley: VFC<RouteComponentProps> = ({ match }) => (
+const Gallery: VFC<RouteComponentProps> = ({ match }) => (
   <>
     <HomeButton />
     <header>
       <h1>ギャラリー</h1>
     </header>
     <Route path={`${match.path}/:placeCode`}>
-      <PlaceGalleries />
+      <PlaceBeforeAfter />
+      <PlaceImages />
     </Route>
   </>
 );
 
-export default Galley;
+export default Gallery;

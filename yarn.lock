@@ -1218,6 +1218,70 @@
   "resolved" "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-10.1.0.tgz"
   "version" "10.1.0"
 
+"@egjs/agent@^2.2.1":
+  "integrity" "sha512-ENhwkOW6rnYW8IuXJwvECIAzj7nMxq+ctB8uCJ+mKnoKK8tGiv3YXtN6nuaOov2YmXdRdwafSz9rhgRNXswX/A=="
+  "resolved" "https://registry.npmjs.org/@egjs/agent/-/agent-2.3.0.tgz"
+  "version" "2.3.0"
+
+"@egjs/axes@^2.8.0":
+  "integrity" "sha512-WPMIM/ExZBS8guD3oeNr6YGDn2xSnj0YUZHWvY/NWvTQIs7A2O7WxJivYgzcg7r2q0RYtzrdpHn+982iaKCLSw=="
+  "resolved" "https://registry.npmjs.org/@egjs/axes/-/axes-2.8.0.tgz"
+  "version" "2.8.0"
+  dependencies:
+    "@egjs/agent" "^2.2.1"
+    "@egjs/component" "^2.2.2"
+    "@egjs/hammerjs" "^2.0.15"
+
+"@egjs/children-differ@^1.0.1":
+  "integrity" "sha512-DRvyqMf+CPCOzAopQKHtW+X8iN6Hy6SFol+/7zCUiE5y4P/OB8JP8FtU4NxtZwtafvSL4faD5KoQYPj3JHzPFQ=="
+  "resolved" "https://registry.npmjs.org/@egjs/children-differ/-/children-differ-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "@egjs/list-differ" "^1.0.0"
+
+"@egjs/component@^2.2.2":
+  "integrity" "sha512-2m6nu6/Mbs6VnoT4IHFGUBX6V82Zp01zDmlWpIJ3fMatHpe7BB1qUYFgMmSWGY0uOvOl4plvflwbCRUAGMfwWQ=="
+  "resolved" "https://registry.npmjs.org/@egjs/component/-/component-2.2.2.tgz"
+  "version" "2.2.2"
+
+"@egjs/flicking@^3.8.3":
+  "integrity" "sha512-iW2eIe0B2VPs6lkZFdBEgU/RT9/ct0MSNssDNo3kcIhjX0d9NLs5M8kj1Mk5hJnlz5Uqbk8S1I42t8RpuzhaQQ=="
+  "resolved" "https://registry.npmjs.org/@egjs/flicking/-/flicking-3.8.3.tgz"
+  "version" "3.8.3"
+  dependencies:
+    "@egjs/axes" "^2.8.0"
+    "@egjs/component" "^2.2.2"
+    "@egjs/imready" "^1.1.2"
+    "@egjs/list-differ" "^1.0.0"
+
+"@egjs/hammerjs@^2.0.15":
+  "integrity" "sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A=="
+  "resolved" "https://registry.npmjs.org/@egjs/hammerjs/-/hammerjs-2.0.17.tgz"
+  "version" "2.0.17"
+  dependencies:
+    "@types/hammerjs" "^2.0.36"
+
+"@egjs/imready@^1.1.2":
+  "integrity" "sha512-9jbF0RZZdgzZqpfOb3IlpgStlkid2Wb6hMw06ln5kmGwUbkgbYCW/hWDeoRX2bVWCf9SAoAZK7dcMnK0U8+FHw=="
+  "resolved" "https://registry.npmjs.org/@egjs/imready/-/imready-1.1.3.tgz"
+  "version" "1.1.3"
+  dependencies:
+    "@egjs/component" "^2.2.2"
+
+"@egjs/list-differ@^1.0.0":
+  "integrity" "sha512-HsbMKc0ZAQH+EUeCmI/2PvTYSybmkaWwakU8QGDYYgMVIg9BQ5sM0A0Nnombjxo2+JzXHxmH+jw//yGX+y6GYw=="
+  "resolved" "https://registry.npmjs.org/@egjs/list-differ/-/list-differ-1.0.0.tgz"
+  "version" "1.0.0"
+
+"@egjs/react-flicking@^3.7.2":
+  "integrity" "sha512-OpNEgvHxUqR7XU8VawR7XZYfbSaBUEu0Q36ssPhGV/A5wpF466hIN1xw78lbZbXxBEfAkq0EN46lIb2Stx+L0Q=="
+  "resolved" "https://registry.npmjs.org/@egjs/react-flicking/-/react-flicking-3.7.2.tgz"
+  "version" "3.7.2"
+  dependencies:
+    "@egjs/children-differ" "^1.0.1"
+    "@egjs/flicking" "^3.8.3"
+    "@egjs/list-differ" "^1.0.0"
+
 "@emotion/hash@^0.8.0":
   "integrity" "sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow=="
   "resolved" "https://registry.npmjs.org/@emotion/hash/-/hash-0.8.0.tgz"
@@ -1855,6 +1919,11 @@
   "version" "4.1.5"
   dependencies:
     "@types/node" "*"
+
+"@types/hammerjs@^2.0.36":
+  "integrity" "sha512-lYR2Y/tV2ujpk/WyUc7S0VLI0a9hrtVIN9EwnrNo5oSEJI2cK2/XrgwOQmXLL3eTulOESvh9qP6si9+DWM9cOA=="
+  "resolved" "https://registry.npmjs.org/@types/hammerjs/-/hammerjs-2.0.39.tgz"
+  "version" "2.0.39"
 
 "@types/history@*":
   "integrity" "sha512-S78QIYirQcUoo6UJZx9CSP0O2ix9IaeAXwQi26Rhr/+mg7qqPy8TzaxHSUut7eGjL8WmLccT7/MXf304WjqHcA=="
@@ -10113,6 +10182,13 @@
     "regenerator-runtime" "^0.13.7"
     "whatwg-fetch" "^3.4.1"
 
+"react-before-after@^0.1.3":
+  "integrity" "sha512-BJltXCLWUjBtn0DeBT3PYJPc3tPuiaDH/sWno7X/OO0T0Al7Q+sKqzGqHAs9VbJpmhc8wXhRfJ/QgntgHdll7A=="
+  "resolved" "https://registry.npmjs.org/react-before-after/-/react-before-after-0.1.3.tgz"
+  "version" "0.1.3"
+  dependencies:
+    "react-dom" "^17.0.1"
+
 "react-dev-utils@^11.0.3":
   "integrity" "sha512-dx0LvIGHcOPtKbeiSUM4jqpBl3TcY7CDjZdfOIcKeznE7BWr9dg0iPG90G5yfVQ+p/rGNMXdbfStvzQZEVEi4A=="
   "resolved" "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-11.0.4.tgz"
@@ -10143,7 +10219,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@*", "react-dom@^16.8.0 || ^17.0.0", "react-dom@^17.0.2", "react-dom@>=16.6.0":
+"react-dom@*", "react-dom@^16.8.0 || ^17.0.0", "react-dom@^17.0.1", "react-dom@^17.0.2", "react-dom@>=16.6.0":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"

@@ -5,7 +5,7 @@
 
 .container {
   /* width: 1000px !important; */
-  max-width: none !important;
+  /* max-width: none !important; */
   font-size: 1rem !important;
   padding: 0 20px
 }
