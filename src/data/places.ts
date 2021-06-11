@@ -44,6 +44,10 @@ export const placesData: Place[] = [
         alias: '玄関',
       },
       {
+        code: 'entranceSideWarehouse',
+        alias: '玄関横物置',
+      },
+      {
         code: 'kitchen',
         alias: 'キッチン',
       },
@@ -82,6 +86,10 @@ export const placesData: Place[] = [
         alias: '通り',
       },
       {
+        code: 'houseAppearance',
+        alias: '家外観',
+      },
+      {
         code: 'parking',
         alias: '駐車場',
       },
@@ -90,19 +98,19 @@ export const placesData: Place[] = [
         alias: '池',
       },
       {
-        code: 'front-entrance',
+        code: 'frontEntrance',
         alias: '家の前',
       },
       {
-        code: 'east-garden',
+        code: 'eastGarden',
         alias: '東側庭',
       },
       {
-        code: 'south-garden',
+        code: 'southGarden',
         alias: '南側庭',
       },
       {
-        code: 'west-garden',
+        code: 'westGarden',
         alias: '西側庭',
       },
       {
@@ -116,3 +124,355 @@ export const placesData: Place[] = [
     ],
   },
 ];
+
+type History = {
+  id: number;
+  date: string;
+  title: string;
+  desc: string;
+};
+
+type Histories = { [placeCode: string]: History[] };
+
+export const histories: Histories = {
+  entrance: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  kitchen: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  bath: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  restroom: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  dining: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  jproom1: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  jproom2: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  annex: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  street: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  parking: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  pond: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  frontEntrance: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  eastGarden: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  southGarden: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  westGarden: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  shoukyakuro1: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+  shoukyakuro2: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
+};

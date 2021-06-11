@@ -3,57 +3,33 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable react/destructuring-assignment */
 import { VFC } from 'react';
-
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import { PlaceDetail } from 'data/places';
-import { makeStyles } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core';
+import '../css/placeCard.css';
 
 type Props = {
   places: PlaceDetail[];
 };
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
-
-const PlaceCard: VFC<Props> = ({ places }) => {
-  const classes = useStyles();
-
-  return (
-    <>
+const PlaceCard: VFC<Props> = ({ places }) => (
+  <>
+    <Grid container spacing={1} alignItems="center">
       {places.map((place) => (
-        <Link to={`gallery/${place.code}`} key={place.code}>
-          <Card className={classes.root} variant="outlined">
-            <CardContent>
-              <Typography
-                className={classes.title}
-                color="textSecondary"
-                gutterBottom
-              >
-                {place.alias}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Link>
+        <Grid item xs={6} sm={4} md={3} key={place.code}>
+          <Link to={`gallery/${place.code}`} key={place.code}>
+            <div className="card-container">
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/thumbnails/${place.code}.jpeg`}
+                alt="hoge"
+              />
+              <p>{place.alias}</p>
+            </div>
+          </Link>
+        </Grid>
       ))}
-    </>
-  );
-};
+    </Grid>
+  </>
+);
 
 export default PlaceCard;

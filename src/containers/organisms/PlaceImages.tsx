@@ -32,40 +32,12 @@ const EnhancedPlaceImages: VFC = () => {
     s3
       .listObjectsV2(config)
       .promise()
-      .then((res) => {
-        // Contents?.shift();
-        // const images = Contents?.map((content) => ({
-        //   source: content.Key,
-        //   title: content.Key?.substr(-20).substr(0, 8),
-        // }));
-
-        // return {
-        //   alias: placeCode,
-        //   images,
-        // };
-
-        /**
-         * listObjectの結果がオブジェクトの名前(日付)順に返ってくるという前提で、
-         * 1つ前に処理したものと同じ日付でなければ新しくdateとsourceを持つオブジェクトを
-         * 作成してimages配列にpush
-         */
-        let current: any = '';
-        const images: any = [];
-
-        console.log('res', res);
-
-        res.Contents?.forEach((content) => {
-          const date = content.Key?.substr(-20).substr(0, 8);
-          if (current !== date) {
-            images.push({
-              date,
-              sources: [content.Key],
-            });
-            current = date;
-          } else {
-            images[images.length - 1].sources.push(content.Key);
-          }
-        });
+      .then(({ Contents }) => {
+        Contents?.shift();
+        const images = Contents?.map((content) => ({
+          source: content.Key,
+          title: content.Key?.substr(-20).substr(0, 8),
+        }));
 
         return {
           alias: placeCode,

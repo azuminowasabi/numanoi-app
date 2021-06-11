@@ -1,15 +1,9 @@
-#root {
-  /* max-width: 930px; */
-  margin: 2.5em auto 0;
-}
 
 .container {
   /* width: 1000px !important; */
   /* max-width: none !important; */
   font-size: 1rem !important;
-  padding: 0 20px
-}
-
-.container h1 {
-  margin-bottom: 3rem !important;
+  padding: 0 20px 50px;
+  max-width: 850px;
+  margin: 0 auto;
 }

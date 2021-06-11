@@ -1,0 +1,27 @@
+.card-container {
+  position: relative;
+  border-radius: 5px;
+}
+
+.card-container  p {
+  position: absolute;
+  top: 0;/*画像の左上に配置*/
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  margin: auto; /*余計な隙間を除く*/
+  color: white;/*文字を白に*/
+  background: rgba(0,0,0,0.4);/*背景色*/
+  font-size: 32px;
+  line-height: 1;/*行高は1に*/
+  padding: 80px 0;/*文字周りの余白*/
+  /* width: 100%; */
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.card-container img {
+  width: 100%;
+  border-radius: 5px;
+}
