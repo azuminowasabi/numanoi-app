@@ -8,39 +8,44 @@ import CategoryTitle from 'components/molecules/CategoryTitle';
 import { VFC } from 'react';
 import '../css/flicking.css';
 
+type Images = {
+  key: string;
+  sources: string[];
+};
+
 type Props = {
-  images: any;
+  images: Images[];
 };
 
 const baseUrl = 'https://s3.ap-northeast-1.amazonaws.com/numanoi-app-resized/';
 
-const PlaceImages: VFC<Props> = ({ images }) => (
-  <>
-    <CategoryTitle title="Progress" />
-    {images.map((image: any) => (
-      <Flicking
-        className="flicking flicking1"
-        hanger="0"
-        anchor="0"
-        moveType="freeScroll"
-        gap={5}
-      >
-        {image.sources?.map((source: any) => (
-          <div className="img-container" key={source.source}>
-            <img
-              src={`${baseUrl}${source.source}`}
-              alt={source.title}
-              className="panel"
-            />
-            <p>{`${source.title.substr(0, 4)}/${source.title.substr(
-              4,
-              2,
-            )}/${source.title.substr(-2)}`}</p>
-          </div>
-        ))}
-      </Flicking>
-    ))}
-  </>
-);
+const PlaceImages: VFC<Props> = ({ images }) => {
+  console.log('props', images);
+
+  return (
+    <>
+      <CategoryTitle title="Progress" />
+      {images.map((image) => (
+        <Flicking
+          className="flicking flicking1"
+          hanger="0"
+          anchor="0"
+          moveType="freeScroll"
+          gap={5}
+        >
+          {image.sources?.map((source) => (
+            <div className="img-container" key={source}>
+              <img src={`${baseUrl}${source}`} alt={source} className="panel" />
+              <p>{`${source.substr(-20, 4)}/${source.substr(
+                -16,
+                2,
+              )}/${source.substr(-14, 2)}`}</p>
+            </div>
+          ))}
+        </Flicking>
+      ))}
+    </>
+  );
+};
 
 export default PlaceImages;

@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { VFC } from 'react';
@@ -36,16 +34,8 @@ const EnhancedPlaceImages: VFC = () => {
       .promise()
       .then(({ Contents }) => {
         Contents?.shift();
-        // const images = Contents?.map((content) => ({
-        //   source: content.Key,
-        //   title: content.Key?.substr(-20).substr(0, 8),
-        // }));
 
-        // return {
-        //   alias: placeCode,
-        //   images,
-        // };
-        let currentKey: any = '';
+        let currentKey = '';
         const images: any = [];
 
         Contents?.forEach((content) => {
@@ -54,22 +44,13 @@ const EnhancedPlaceImages: VFC = () => {
           const key = keyMatch[1];
 
           if (key !== currentKey) {
-            console.log('images', images);
             images.push({
               key,
-              sources: {
-                source: content.Key,
-                title: content.Key?.substr(-20).substr(0, 8),
-              },
+              sources: [content.Key],
             });
             currentKey = key;
           } else {
-            console.log('key', key);
-            console.log('currentKey', currentKey);
-            images[currentKey].sources.push({
-              source: content.Key,
-              title: content.Key?.substr(-20).substr(0, 8),
-            });
+            images[images.length - 1].sources.push(content.Key);
           }
         });
 
@@ -83,7 +64,7 @@ const EnhancedPlaceImages: VFC = () => {
 
   if (data === undefined) return <div>No images</div>;
 
-  return <PlaceImages images={data.images} />;
+  return <PlaceImages images={data} />;
 };
 
 export default EnhancedPlaceImages;
