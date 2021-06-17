@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
@@ -34,15 +36,44 @@ const EnhancedPlaceImages: VFC = () => {
       .promise()
       .then(({ Contents }) => {
         Contents?.shift();
-        const images = Contents?.map((content) => ({
-          source: content.Key,
-          title: content.Key?.substr(-20).substr(0, 8),
-        }));
+        // const images = Contents?.map((content) => ({
+        //   source: content.Key,
+        //   title: content.Key?.substr(-20).substr(0, 8),
+        // }));
 
-        return {
-          alias: placeCode,
-          images,
-        };
+        // return {
+        //   alias: placeCode,
+        //   images,
+        // };
+        let currentKey: any = '';
+        const images: any = [];
+
+        Contents?.forEach((content) => {
+          const keyMatch = content.Key?.match(/\/(.*?)\//);
+          if (keyMatch === undefined || keyMatch === null) return;
+          const key = keyMatch[1];
+
+          if (key !== currentKey) {
+            console.log('images', images);
+            images.push({
+              key,
+              sources: {
+                source: content.Key,
+                title: content.Key?.substr(-20).substr(0, 8),
+              },
+            });
+            currentKey = key;
+          } else {
+            console.log('key', key);
+            console.log('currentKey', currentKey);
+            images[currentKey].sources.push({
+              source: content.Key,
+              title: content.Key?.substr(-20).substr(0, 8),
+            });
+          }
+        });
+
+        return images;
       }),
   );
 
@@ -52,7 +83,7 @@ const EnhancedPlaceImages: VFC = () => {
 
   if (data === undefined) return <div>No images</div>;
 
-  return <PlaceImages alias={data.alias} images={data.images} />;
+  return <PlaceImages images={data.images} />;
 };
 
 export default EnhancedPlaceImages;

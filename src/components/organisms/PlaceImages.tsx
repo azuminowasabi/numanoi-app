@@ -9,7 +9,6 @@ import { VFC } from 'react';
 import '../css/flicking.css';
 
 type Props = {
-  alias: string;
   images: any;
 };
 
@@ -18,27 +17,29 @@ const baseUrl = 'https://s3.ap-northeast-1.amazonaws.com/numanoi-app-resized/';
 const PlaceImages: VFC<Props> = ({ images }) => (
   <>
     <CategoryTitle title="Progress" />
-    <Flicking
-      className="flicking flicking1"
-      hanger="0"
-      anchor="0"
-      moveType="freeScroll"
-      gap={5}
-    >
-      {images?.map((image: any) => (
-        <div className="img-container" key={image.source}>
-          <img
-            src={`${baseUrl}${image.source}`}
-            alt={image.title}
-            className="panel"
-          />
-          <p>{`${image.title.substr(0, 4)}/${image.title.substr(
-            4,
-            2,
-          )}/${image.title.substr(-2)}`}</p>
-        </div>
-      ))}
-    </Flicking>
+    {images.map((image: any) => (
+      <Flicking
+        className="flicking flicking1"
+        hanger="0"
+        anchor="0"
+        moveType="freeScroll"
+        gap={5}
+      >
+        {image.sources?.map((source: any) => (
+          <div className="img-container" key={source.source}>
+            <img
+              src={`${baseUrl}${source.source}`}
+              alt={source.title}
+              className="panel"
+            />
+            <p>{`${source.title.substr(0, 4)}/${source.title.substr(
+              4,
+              2,
+            )}/${source.title.substr(-2)}`}</p>
+          </div>
+        ))}
+      </Flicking>
+    ))}
   </>
 );
 
