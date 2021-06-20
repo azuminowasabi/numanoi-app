@@ -3,7 +3,16 @@
   /* width: 1000px !important; */
   /* max-width: none !important; */
   font-size: 1rem !important;
-  padding: 0 20px 50px;
+  padding: 20px 20px 50px;
   max-width: 850px;
   margin: 0 auto;
+}
+
+h1.title {
+  text-align: center;
+  font-size: 42px;
+}
+
+.pr-35 {
+  padding-right: 35px;
 }

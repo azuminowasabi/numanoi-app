@@ -3,7 +3,7 @@ import PlaceList from 'components/organisms/PlaceList';
 
 const Home: VFC = () => (
   <>
-    <h2>施工場所</h2>
+    <h1 className="title">施工場所</h1>
     <PlaceList />
   </>
 );

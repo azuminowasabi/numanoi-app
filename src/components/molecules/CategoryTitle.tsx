@@ -1,4 +1,6 @@
-import { Grid } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
+
 import { VFC } from 'react';
 import {
   BeforeAfterIcon,
@@ -8,7 +10,17 @@ import {
   ProgressIcon,
 } from './Icons';
 
+const useStyles = makeStyles(() =>
+  createStyles({
+    title: {
+      margin: '20px 0 10px',
+    },
+  }),
+);
+
 const CategoryTitle: VFC<{ title: string }> = ({ title }) => {
+  const classes = useStyles();
+
   const icon = () => {
     switch (title) {
       case 'Before and After':
@@ -27,10 +39,17 @@ const CategoryTitle: VFC<{ title: string }> = ({ title }) => {
   };
 
   return (
-    <Grid container direction="row" alignItems="center">
+    <Grid
+      container
+      direction="row"
+      alignItems="center"
+      className={classes.title}
+    >
       <Grid item>{icon()}</Grid>
       <Grid item>
-        <h2>{title}</h2>
+        <Typography variant="h4" color="primary">
+          {title}
+        </Typography>
       </Grid>
     </Grid>
   );

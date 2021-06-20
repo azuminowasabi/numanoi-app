@@ -44,7 +44,7 @@ export const placesData: Place[] = [
         alias: '玄関',
       },
       {
-        code: 'entrance-side-warehouse',
+        code: 'entranceSideWarehouse',
         alias: '玄関横物置',
       },
       {
@@ -86,7 +86,7 @@ export const placesData: Place[] = [
         alias: '通り',
       },
       {
-        code: 'house-appearance',
+        code: 'houseAppearance',
         alias: '家外観',
       },
       {
@@ -98,19 +98,19 @@ export const placesData: Place[] = [
         alias: '池',
       },
       {
-        code: 'front-entrance',
+        code: 'frontEntrance',
         alias: '家の前',
       },
       {
-        code: 'east-garden',
+        code: 'eastGarden',
         alias: '東側庭',
       },
       {
-        code: 'south-garden',
+        code: 'southGarden',
         alias: '南側庭',
       },
       {
-        code: 'west-garden',
+        code: 'westGarden',
         alias: '西側庭',
       },
       {
@@ -155,7 +155,7 @@ export const histories: Histories = {
       desc: '井上を呼んでゴミを回収してもらう',
     },
   ],
-  entrance-side-warehouse: [
+  entranceSideWarehouse: [
     {
       id: 1,
       date: '2020/02/02',
