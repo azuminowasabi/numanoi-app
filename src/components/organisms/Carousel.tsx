@@ -19,7 +19,9 @@ const Carousel: VFC<Props> = ({ image }) => (
     slidesToShow={1}
     slidesToScroll={1}
     variableWidth
-    speed={500}
+    swipeToSlide
+    arrows={false}
+    lazyLoad="ondemand"
   >
     {image.sources?.map((source) => (
       <div className="img-container" key={source}>

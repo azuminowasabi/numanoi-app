@@ -335,6 +335,26 @@ export const histories: Histories = {
       desc: '井上を呼んでゴミを回収してもらう',
     },
   ],
+  houseAppearance: [
+    {
+      id: 1,
+      date: '2020/02/02',
+      title: '掃除',
+      desc: '家の前に溜まっていたゴミを掃除',
+    },
+    {
+      id: 2,
+      date: '2020/03/22',
+      title: '水道',
+      desc: '水道が出るように調整',
+    },
+    {
+      id: 3,
+      date: '2020/05/03',
+      title: '撤去',
+      desc: '井上を呼んでゴミを回収してもらう',
+    },
+  ],
   parking: [
     {
       id: 1,
